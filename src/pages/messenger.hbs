@@ -2,7 +2,7 @@
     <aside class="sidebar">
         <div class="sidebar__head">
             <a href="/profile" class="sidebar__profile">
-                {{> avatar name="Иван"}}
+                {{> avatar name="Иван" showAlt="true"}}
                 <span class="sidebar__user-name">
                     Иван
                 </span>
@@ -19,8 +19,8 @@
                 {{/chat}}
             {{/each}}
             </ul>
-            <button class="chats__add" title="Новый чат">
-                {{>icon name="plus" className=""}}
+            <button class="chats__add" title="Новый чат" type="button">
+                {{>icon name="plus" className="" alt="Создать новый чат."}}
             </button>
         </div>
     </aside>

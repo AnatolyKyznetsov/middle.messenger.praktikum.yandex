@@ -13,13 +13,11 @@
     </main>
     <div class="test-nav">
         Список страниц
-        <ul class="test-nav__list">
+        <nav class="test-nav__list">
             {{#each pages.data}}
-                <li class="test-nav__item">
-                    {{> link url=url text=name}}
-                </li>
+                {{> link url=url text=name}}
             {{/each}}
-        </ul>
+        </nav>
     </div>
 </body>
 </html>

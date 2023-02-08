@@ -4,7 +4,7 @@
     <div class="avatar {{#if big}}avatar_big{{/if}}">
 {{/if}}
     {{#if src}}
-        <img class="avatar__img" src="{{src}}" alt="">
+        <img class="avatar__img" src="{{src}}" alt="{{#if showAlt}}Аватар.{{/if}}">
     {{else}}
         {{first name}}
     {{/if}}
