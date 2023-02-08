@@ -9,7 +9,7 @@
 ## На данный момент реализованно:
 + [Макет](https://www.figma.com/file/pbGFCt4LJYFiVVSkSvfPFk/messenger.praktikum?node-id=13%3A171&t=Q8wPAsf3I90JBCUM-1)
 + Шаблоны страниц с использованием handlebars
-+ Публикация на [Netlify](#)
++ Публикация на [Netlify](https://celadon-zabaione-8d93f1.netlify.app/)
 
 ## Структура проекта
 + Компонент шаблонов - */src/components*
