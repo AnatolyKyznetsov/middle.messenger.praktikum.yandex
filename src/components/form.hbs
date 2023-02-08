@@ -1,0 +1,4 @@
+<form action="{{action}}" name="{{name}}" class="form {{className}}" method="{{#if method}}{{method}}{{else}}post{{/if}}">
+    {{> @partial-block}}
+    {{> button label=buttonLable className="form__button"}}
+</form>

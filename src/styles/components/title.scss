@@ -1,0 +1,13 @@
+.title {
+    font-weight: 500;
+    line-height: 1.2;
+    color: $color-text-dark;
+
+    &_main {
+        font-size: 28px;
+    }
+
+    &_section {
+        font-size: 22px;
+    }
+}

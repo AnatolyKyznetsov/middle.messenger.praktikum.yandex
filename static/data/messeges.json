@@ -1,0 +1,39 @@
+{
+    "data": [
+        {
+            "name": "Иван",
+            "date": "12:30",
+            "count": "99+",
+            "img": null,
+            "message": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus vitae consequuntur ullam vel possimus exercitationem ex facilis molestias amet? Magnam dolores debitis quis praesentium repellat animi voluptatem. Deleniti, consequuntur architecto."
+        },
+        {
+            "name": "Макс",
+            "date": "Чт",
+            "count": null,
+            "img": null,
+            "message": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus vitae consequuntur ullam vel possimus exercitationem ex facilis molestias amet? Magnam dolores debitis quis praesentium repellat animi voluptatem. Deleniti, consequuntur architecto."
+        },
+        {
+            "name": "Оля",
+            "date": "Ср",
+            "count": null,
+            "img": null,
+            "message": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus vitae consequuntur ullam vel possimus exercitationem ex facilis molestias amet? Magnam dolores debitis quis praesentium repellat animi voluptatem. Deleniti, consequuntur architecto."
+        },
+        {
+            "name": "Обучение",
+            "date": "01.02.2023",
+            "count": null,
+            "img": null,
+            "message": "<span>Оля</span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus vitae consequuntur ullam vel possimus exercitationem ex facilis molestias amet? Magnam dolores debitis quis praesentium repellat animi voluptatem. Deleniti, consequuntur architecto."
+        },
+        {
+            "name": "Макс",
+            "date": "01.02.2023",
+            "count": null,
+            "img": null,
+            "message": "<span>Вы</span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus vitae consequuntur ullam vel possimus exercitationem ex facilis molestias amet? Magnam dolores debitis quis praesentium repellat animi voluptatem. Deleniti, consequuntur architecto."
+        }
+    ]
+}

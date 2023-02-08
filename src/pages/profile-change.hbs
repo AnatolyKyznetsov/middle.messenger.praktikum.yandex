@@ -1,0 +1,17 @@
+{{#> page title="Профиль - изменить данные"}}
+    {{#> shape buttonBack="/profile" className=""}}
+        {{#> form buttonLable="Сохранить" className=""}}
+            <div class="profile">
+                <div class="profile__inner">
+                    {{> avatar load="true" name="Иван"}}
+                </div>
+                <div class="profile__inputs">
+                    {{#each user.data}}
+                        {{> label name=input-name text=name value=value attrs="required"}}
+                    {{/each}}
+                    {{> label name="display_name" text="Имя в чате" value="Иван" attrs="required"}}
+                </div>
+            </div>
+        {{/form}}
+    {{/shape}}
+{{/page}}

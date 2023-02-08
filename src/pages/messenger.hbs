@@ -1,0 +1,53 @@
+{{#> page mainClassName="main_messenger" title="Мессенджер"}}
+    <aside class="sidebar">
+        <div class="sidebar__head">
+            <a href="/profile" class="sidebar__profile">
+                {{> avatar name="Иван"}}
+                <span class="sidebar__user-name">
+                    Иван
+                </span>
+            </a>
+            <div class="search">
+                {{> input placeholder="Поиск" className="search__input"}}
+            </div>
+        </div>
+        <div class="chats">
+            <ul class="chats__list">
+            {{#each messeges.data}}
+                {{#> chat name=name avatarSrc=img name=name lastDate=date coun=count}}
+                    {{{message}}}
+                {{/chat}}
+            {{/each}}
+            </ul>
+            <button class="chats__add" title="Новый чат">
+                {{>icon name="plus" className=""}}
+            </button>
+        </div>
+    </aside>
+    <div class="messenger">
+        Выберите чат чтобы отправить сообщение
+    </div>
+    {{#> modal}}
+        {{#> shape}}
+            {{> title-section text="Удалить чат?" className="shape__title shape__title"}}
+            <div class="modal__buttons">
+                {{> button transparent="true" label="Удалить"}}
+                {{> button label="Отмена"}}
+            </div>
+        {{/shape}}
+    {{/modal}}
+    {{#> modal}}
+        {{#> shape}}
+            {{> title-section text="Удалить пользователя" className="shape__title shape__title"}}
+            {{> label name="login" text="Логин" attrs="required"}}
+            {{> button label="Удалить"}}
+        {{/shape}}
+    {{/modal}}
+    {{#> modal}}
+        {{#> shape}}
+            {{> title-section text="Добавить пользователя" className="shape__title shape__title"}}
+            {{> label name="login" text="Логин" attrs="required"}}
+            {{> button label="Добавить"}}
+        {{/shape}}
+    {{/modal}}
+{{/page}}

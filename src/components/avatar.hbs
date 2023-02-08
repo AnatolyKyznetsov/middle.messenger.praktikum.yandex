@@ -1,0 +1,16 @@
+{{#if load}} 
+    <label class="avatar avatar_big avatar_load">
+{{else}}
+    <div class="avatar {{#if big}}avatar_big{{/if}}">
+{{/if}}
+    {{#if src}}
+        <img class="avatar__img" src="{{src}}" alt="">
+    {{else}}
+        {{first name}}
+    {{/if}}
+{{#if load}}
+        <input type="file" class="avatar__input" accept=".png, .jpg, .jpeg" name="avatar">
+    </label>
+{{else}}
+    </div>
+{{/if}}

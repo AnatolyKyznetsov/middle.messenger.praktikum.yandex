@@ -1,0 +1,51 @@
+.shape {
+    background: $color-main-light;
+    border-radius: $radius;
+    border: 2px solid $color-elem-first;
+    min-width: 380px;
+    max-width: 594px;
+    overflow: hidden;
+    display: inline-flex;
+
+    &__title {
+        text-align: center;
+        margin-bottom: 20px;
+
+        &_big {
+            margin: 20px 0 30px;
+        }
+    }
+
+    &__link {
+        margin-top: 16px;
+    }
+
+    &__back {
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: 1px solid $color-elem-first;
+        transition: $transition;
+
+        .icon {
+            pointer-events: none;
+        }
+
+        &:hover {
+            background: $color-additional-first;
+        }
+    }
+
+    &__wrapper {
+        padding: 22px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .form {
+            width: 100%;
+        }
+    }
+}

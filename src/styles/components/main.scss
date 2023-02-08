@@ -1,0 +1,14 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px;
+
+    &_messenger {
+        height: 100vh;
+        align-items: unset;
+        justify-content: unset;
+        padding: 0;
+    }
+}

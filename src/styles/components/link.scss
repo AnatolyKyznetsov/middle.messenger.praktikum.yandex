@@ -1,0 +1,14 @@
+.link {
+    font-size: 14px;
+    line-height: 1.2;
+    transition: $transition;
+    color: $color-elem-first;
+
+    &_warning {
+        color: $color-warning;
+    }
+
+    &:hover {
+        color: $color-elem-first-hover;
+    }
+}

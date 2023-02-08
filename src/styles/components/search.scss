@@ -1,0 +1,20 @@
+.search {
+    position: relative;
+
+    &__input {
+        padding-right: 42px;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        width: 11px;
+        height: 11px;
+        background: url('/static/icons/search.svg') no-repeat center;
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+}

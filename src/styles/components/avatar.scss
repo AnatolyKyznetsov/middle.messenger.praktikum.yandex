@@ -1,0 +1,65 @@
+.avatar {
+    overflow: hidden;
+    flex-shrink: 0;
+    background: $color-additional-third;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    line-height: 1;
+    font-weight: 500;
+    user-select: none;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+
+    &_load {
+        position: relative;
+        cursor: pointer;
+
+        &::before {
+            content: 'Поменять аватар';
+            width: 100%;
+            height: 100%;
+            background: #{HexToRGBA($color-main-dark, 0.7)};
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            inset: 0;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 1.2;
+            text-align: center;
+            padding: 8px;
+            color: $color-text-light;
+            opacity: 0;
+            transition: $transition;
+        }
+
+        &:hover {
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    &_big {
+        font-size: 61px;
+        width: 109px;
+        height: 109px;
+    }
+
+    &__img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    &__input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        pointer-events: none;
+    }
+}
