@@ -1,0 +1,10 @@
+<div class="shape {{className}}">
+    {{#if buttonBack}}
+        <a href="{{buttonBack}}" class="shape__back">
+            {{>icon name="arrow" alt="Назад."}}
+        </a>
+    {{/if}}
+    <div class="shape__wrapper">
+        {{> @partial-block}}
+    </div>
+</div>

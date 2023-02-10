@@ -1,0 +1,44 @@
+.test-nav {
+    border-radius: $radius;
+    background: $color-additional-second;
+    color: $color-text-light;
+    padding: 12px;
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    cursor: pointer;
+
+    &:hover {
+        .test-nav__list {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+    &__list {
+        background: $color-main-light;
+        position: absolute;
+        bottom: calc(100% + 8px);
+        right: 0;
+        border-radius: $radius;
+        padding: 12px;
+        width: 230px;
+        opacity: 0;
+        pointer-events: none;
+        transition: $transition;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            position: absolute;
+            height: 8px;
+            top: 100%;
+            left: 0;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "data": [
+        {
+            "name": "Регистрация",
+            "url": "/"
+        },
+        {
+            "name": "Вход",
+            "url": "/login"
+        },
+        {
+            "name": "Профиль",
+            "url": "/profile"
+        },
+        {
+            "name": "Профиль - изменить данные",
+            "url": "/profile-change"
+        },
+        {
+            "name": "Профиль - изменить пароль",
+            "url": "/profile-change-password"
+        },
+        {
+            "name": "Мессенджер",
+            "url": "/messenger"
+        },
+        {
+            "name": "404",
+            "url": "/404"
+        },
+        {
+            "name": "500",
+            "url": "/500"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+.modal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px;
+    position: fixed;
+    inset: 0;
+    background: #{HexToRGBA($color-main-dark, 0.4)};
+    z-index: 8000;
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        width: 100%;
+    }
+}
