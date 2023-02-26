@@ -1,8 +1,69 @@
 .messenger {
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    color: $color-additional-third;
+    justify-content: space-between;
     font-size: 14px;
+
+    &__block {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        padding: 12px;
+
+        &:first-child {
+            border-bottom: 1px solid $color-additional-second;
+        }
+
+        &:last-child {
+            border-top: 1px solid $color-additional-second;
+        }
+    }
+
+    &__info {
+        gap: 16px;
+        align-items: center;
+        display: inline-flex;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.2;
+        color: $color-text-light;
+    }
+
+    &__content {
+        @include no-scroll-bar;
+
+        max-width: 900px;
+        align-items: flex-start;
+        padding: 12px;
+        overflow-y: auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__text {
+        width: 100%;
+        text-align: center;
+        color: $color-additional-third;
+
+        &_center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+    }
+
+    &__form {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+    }
 }

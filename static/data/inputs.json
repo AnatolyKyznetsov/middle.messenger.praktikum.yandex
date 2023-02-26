@@ -1,0 +1,114 @@
+{
+    "data": [
+        {
+            "text": "Имя",
+            "value": "Иван",
+            "name": "first_name",
+            "type": "text",
+            "attrs": "require",
+            "repeat": "",
+            "pattern": "^[A-Z|А-Я]{1}[a-z|а-я|-]{0,}$",
+            "tooltip": "Первая буква должна быть заглавной, без пробелов и без цифр,допустим дефис"
+        },
+        {
+            "text": "Фамилия",
+            "value": "Иванов",
+            "name": "second_name",
+            "type": "text",
+            "attrs": "require",
+            "repeat": "",
+            "pattern": "^[A-Z|А-Я]{1}[a-z|а-я|-]{0,}$",
+            "tooltip": "Первая буква должна быть заглавной, без пробелов и без цифр,допустим дефис"
+        },
+        {
+            "text": "Имя в чате",
+            "value": "Иван",
+            "name": "display_name",
+            "type": "text",
+            "attrs": "require",
+            "repeat": "",
+            "pattern": "",
+            "tooltip": ""
+        },
+        {
+            "text": "Логин",
+            "value": "user123",
+            "name": "login",
+            "type": "text",
+            "attrs": "require",
+            "repeat": "",
+            "pattern": "^(?=.*[A-Z|a-z])[A-Z|a-z|\\d|-|_]{3,12}$",
+            "tooltip": "От 3 до 20 символов, латиница, может содержать цифры, но не состоять из них, без пробелов, допустимы дефис и нижнее подчёркивание."
+        },
+        {
+            "text": "Почта",
+            "value": "example@gmail.com",
+            "name": "email",
+            "type": "text",
+            "attrs": "require",
+            "repeat": "",
+            "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$",
+            "tooltip": "Пример: example@gmail.com"
+        },
+        {
+            "text": "Телефон",
+            "value": "+79999999999",
+            "name": "phone",
+            "type": "text",
+            "attrs": "require",
+            "repeat": "",
+            "pattern": "^[+]?\\d{10,15}$",
+            "tooltip": "Без пробелов, состоит из цифр, может начинается с плюса"
+        },
+        {
+            "text": "Пароль",
+            "value": "",
+            "name": "password",
+            "type": "password",
+            "attrs": "require",
+            "repeat": "",
+            "pattern": "(?=.*[A-Z|А-Я])(?=.*[\\d])[\\w|А-Я|а-я]{8,40}",
+            "tooltip": "От 8 до 40 символов, обязательно хотя бы одна заглавная буква и цифра"
+        },
+        {
+            "text": "Пароль (ещё раз)",
+            "value": "",
+            "name": "",
+            "type": "password",
+            "attrs": "require",
+            "repeat": "password",
+            "pattern": "",
+            "tooltip": "Должно совпадать с полем \"Пароль\""
+        },
+        {
+            "text": "Старый пароль",
+            "value": "",
+            "name": "oldPassword",
+            "type": "password",
+            "attrs": "require",
+            "repeat": "",
+            "pattern": "A123qwerty",
+            "tooltip": "Тестовый пароль A123qwerty"
+        },
+        {
+            "text": "Новый пароль",
+            "value": "",
+            "name": "newPassword",
+            "type": "password",
+            "attrs": "require",
+            "repeat": "",
+            "pattern": "(?=.*[A-Z|А-Я])(?=.*[\\d])[\\w|А-Я|а-я]{8,40}",
+            "tooltip": "От 8 до 40 символов, обязательно хотя бы одна заглавная буква и цифра"
+        },
+        {
+            "text": "Новый пароль (ещё раз)",
+            "value": "",
+            "name": "",
+            "type": "password",
+            "attrs": "require",
+            "repeat": "newPassword",
+            "pattern": "",
+            "tooltip": "Должно совпадать с полем \"Новый пароль\""
+        }
+    ]
+}

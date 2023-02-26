@@ -18,6 +18,15 @@
     &:-ms-input-placeholder { @content; }
 }
 
+@mixin no-scroll-bar { 
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 @function HexToRGBA($hex, $alpha) {
     @return rgba(red($hex), green($hex), blue($hex), $alpha);
 }

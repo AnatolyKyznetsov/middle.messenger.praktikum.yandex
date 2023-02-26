@@ -1,0 +1,12 @@
+<input 
+    type="{{#if type}}{{type}}{{else}}text{{/if}}"
+    class="{{className}} {{#if notEmpty}}not-empty{{/if}}"
+    {{#if accept}}
+        accept="{{accept}}"
+    {{/if}}
+    value="{{value}}" 
+    name="{{name}}" 
+    placeholder="{{placeholder}}"
+    {{attrs}} 
+    {{#if repeat}}data-repeat="{{repeat}}"{{/if}}"
+>

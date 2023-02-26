@@ -9,6 +9,10 @@
     background: #{HexToRGBA($color-main-dark, 0.4)};
     z-index: 8000;
 
+    &_active {
+        display: flex;
+    }
+
     &__buttons {
         display: flex;
         justify-content: space-between;

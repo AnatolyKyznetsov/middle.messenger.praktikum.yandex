@@ -1,0 +1,6 @@
+<form action="{{action}}" name="{{name}}" class="form {{className}}" method="{{#if method}}{{method}}{{else}}post{{/if}}">
+    {{#each content}}
+        {{{this}}}
+    {{/each}}
+    {{{submit}}}
+</form>

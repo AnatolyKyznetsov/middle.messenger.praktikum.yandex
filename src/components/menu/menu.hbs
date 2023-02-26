@@ -1,0 +1,13 @@
+<div class="menu ">
+    <div class="menu__icon">
+        <img src="{{icon}}" alt="{{iconAlt}}">
+    </div>
+    <div class="menu__block
+        menu__block_{{#if posX}}{{posX}}{{else}}left{{/if}}
+        menu__block_{{#if posY}}{{posY}}{{else}}bottom{{/if}}
+    ">
+        {{#each content}}
+            {{{this}}}
+        {{/each}}
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="messenger">
+    {{#if chatId}}
+        <div class="messenger__block">
+            <div class="messenger__info">
+                {{{avatar}}}
+                <span class="messenger__name">
+                    {{chatName}}
+                </span>
+            </div>
+            {{{headMenu}}}
+        </div>
+    {{/if}}
+     <div class="messenger__content js-messengerContent">
+        {{#unless chatId}}
+            <span class="messenger__text messenger__text_center">
+                Выберите чат чтобы отправить сообщение
+            </span>
+        {{/unless}}
+        {{#if chatId}}
+            {{#unless messages}}
+                <span class="messenger__text messenger__text_center">
+                    Сообщений пока нет
+                </span>
+            {{/unless}}
+            {{#each messageItems}}
+                {{{this}}}
+            {{/each}}
+        {{/if}}
+    </div>
+    {{#if chatId}}
+        <div class="messenger__block">
+            {{{sendMessageForm}}}
+        </div>
+    {{/if}}
+</div>
