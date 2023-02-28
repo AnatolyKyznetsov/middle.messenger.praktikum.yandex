@@ -4,7 +4,11 @@ import Link from '../link';
 import Icon from '../icon';
 import arrow from '../../../static/icons/arrow.svg';
 
-export default class ButtonBack extends Component {
+interface IPropsButtonBack {
+    page: string,
+}
+
+export default class ButtonBack extends Component<IPropsButtonBack> {
     init() {
         this.children.content = new Link({
             className: 'shape__back',

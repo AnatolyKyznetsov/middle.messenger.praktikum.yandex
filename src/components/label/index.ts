@@ -5,7 +5,21 @@ import Input from '../input';
 import Text from '../text';
 import Tooltip from '../tooltip';
 
-export default class Label extends Component {
+interface IPropsLabel {
+    className?: string,
+    error?: boolean,
+    text: string,
+    tooltip?: string,
+    type?: string,
+    notEmpty?: boolean,
+    value?: string,
+    name?: string,
+    attrs?: string,
+    repeat?: string,
+    pattern?: string,
+}
+
+export default class Label extends Component<IPropsLabel> {
     init() {
         const props = this.props;
         const eventBus: EventBus = new EventBus;

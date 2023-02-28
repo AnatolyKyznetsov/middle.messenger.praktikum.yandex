@@ -5,7 +5,7 @@ interface IChildren {
     [key: string]: Component | Component[],
 }
 
-export default class Component {
+export default abstract class Component<Props extends Record<string, any> = any> {
     static EVENTS: Record<string, string> = {
         INIT: 'init',
         FLOW_CDM: 'flow:component-did-mount',
@@ -16,10 +16,10 @@ export default class Component {
     public id: string = uuid();
     private _eventBus: () => EventBus;
     private _element: Element | null = null;
-    protected props: any;
+    protected props: Props;
     public children: IChildren;
 
-    constructor(propsAndChildren: Record<string, any> | IChildren = {} ) {
+    constructor(propsAndChildren: Props | IChildren = {} ) {
         const eventBus = new EventBus();
 
         const { props, children } = this._getPropsAndChildren(propsAndChildren);
@@ -35,9 +35,9 @@ export default class Component {
         eventBus.emit(Component.EVENTS.INIT);
     }
 
-    private _getPropsAndChildren(propsAndChildrens: any): {props: Record<string, any>, children: IChildren} {
+    private _getPropsAndChildren(propsAndChildrens: Props | IChildren): {props: Props, children: IChildren} {
         const children: IChildren = {};
-        const props: Record<string, any> = {};
+        const props: Props = {} as Props;
 
         Object.entries(propsAndChildrens).forEach(([ key, value ]) => {
             if (Array.isArray(value) && value.every(e => e instanceof Component)) {
@@ -45,7 +45,7 @@ export default class Component {
             } else if (value instanceof Component) {
                 children[key] = value;
             } else {
-                props[key] = value;
+                props[key as keyof Props] = value;
             }
         });
 
@@ -104,11 +104,11 @@ export default class Component {
         });
     }
 
-    protected componentDidUpdate(oldProps: Record<string, any>, newProps: Record<string, any>): boolean {
+    protected componentDidUpdate(oldProps: Props, newProps: Props): boolean {
         return oldProps !== newProps;
     }
 
-    private _componentDidUpdate(oldProps: Record<string, any>, newProps: Record<string, any>) : void {
+    private _componentDidUpdate(oldProps: Props, newProps: Props) : void {
         if (this.componentDidUpdate(oldProps, newProps)) {
             this._eventBus().emit(Component.EVENTS.FLOW_RENDER);
         }
@@ -118,14 +118,14 @@ export default class Component {
         return this.props[prop];
     }
 
-    private _makePropsProxy(props: any): void {
+    private _makePropsProxy(props: Props): Props {
         const self = this;
 
         return new Proxy(props, {
-            set(target: Record<string, any>, prop: string, value: any) {
-                const oldProp: Record<string, any> = target[prop];
+            set(target: Props, prop: string, value: any) {
+                const oldProp: Props = target[prop];
 
-                target[prop] = value;
+                target[prop as keyof Props] = value;
 
                 self._eventBus().emit(Component.EVENTS.FLOW_CDU, oldProp, value);
 
@@ -137,7 +137,7 @@ export default class Component {
         });
     }
 
-    public setProps(nextProps: any): void {
+    public setProps(nextProps: Partial<Props>): void {
         if (nextProps) {
             Object.assign(this.props, nextProps);
         }
@@ -152,7 +152,7 @@ export default class Component {
     }
 
     private _addEvents(): void {
-        const { events = {} } = this.props as {events: Record<string, () => void>};
+        const { events = {} }: Props = this.props;
 
         Object.keys(events).forEach((event: string) => {
             this._element!.addEventListener(event, events[event]);
@@ -160,7 +160,7 @@ export default class Component {
     }
 
     private _removeEvents() {
-        const { events = {} } = this.props as {events: Record<string, () => void>};
+        const { events = {} }: Props = this.props;
 
         Object.keys(events).forEach((event: string) => {
             this._element!.removeEventListener(event, events[event]);

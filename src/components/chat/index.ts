@@ -2,7 +2,15 @@ import template from './chat.hbs';
 import Component from '../../utils/Component';
 import Avatar from '../avatar';
 
-export default class Chat extends Component {
+interface IPropsChat {
+    avatarSrc?: string | null,
+    name: string,
+    message?: string,
+    lastDate?: string,
+    count?: string | null,
+}
+
+export default class Chat extends Component<IPropsChat> {
     init() {
         this.children.avatar = new Avatar({
             name: this.props.name,

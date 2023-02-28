@@ -6,13 +6,8 @@ import Profile from '../pages/profile';
 import ProfileChange from '../pages/profile-change';
 import ProfileChangePassword from '../pages/profile-change-password';
 import Registration from '../pages/registration';
-import Component from './Component';
 
-interface test {
-    [key: string]: typeof Component
-}
-
-const ROUTES: test = {
+const ROUTES: Record<string, any> = {
     '404': Page404,
     '500': Page500,
     'login': Login,

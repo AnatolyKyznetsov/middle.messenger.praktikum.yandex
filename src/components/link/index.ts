@@ -2,7 +2,16 @@ import template from './link.hbs';
 import Component from '../../utils/Component';
 import renderDOM from '../../utils/renderDOM';
 
-export default class Link extends Component {
+interface IPropsLink {
+    page: string,
+    className?: string,
+    content: Component[] | string[],
+    events?: {
+        click:(e: Event) => void,
+    },
+}
+
+export default class Link extends Component<IPropsLink> {
     init() {
         this.props.events = {
             ...this.props.events,

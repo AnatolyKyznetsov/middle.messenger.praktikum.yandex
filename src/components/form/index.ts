@@ -5,6 +5,19 @@ import Icon from '../icon';
 import inputValidator from '../../utils/inputValidator';
 import arrow from '../../../static/icons/arrow.svg';
 
+interface IPropsForm {
+    action?: string,
+    name?: string,
+    className?: string,
+    method?: string,
+    content: Component[],
+    buttonLable?: string,
+    iconButton?: boolean,
+    events?: {
+        submit: (e: Event) => void,
+    },
+}
+
 const inputs: Component[] = [];
 
 function findInput(Component: Component | Component[]): void {
@@ -25,7 +38,7 @@ function findInput(Component: Component | Component[]): void {
     }
 }
 
-export default class Form extends Component {
+export default class Form extends Component<IPropsForm> {
     init() {
         const isIconButton = this.props.iconButton;
 

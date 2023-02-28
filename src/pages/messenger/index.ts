@@ -78,7 +78,7 @@ const modals: Component[] = [
 ];
 
 const messenger = new Messenger({
-    chatId: 1,
+    chatId: '1',
     chatName: 'Обучение',
     messages: messages.data,
     eventBus: eventBus,

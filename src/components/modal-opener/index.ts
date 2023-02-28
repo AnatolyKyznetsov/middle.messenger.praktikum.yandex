@@ -1,7 +1,18 @@
 import template from './modal-opener.hbs';
 import Component from '../../utils/Component';
+import EventBus from '../../utils/EventBus';
 
-export default class ModalOpener extends Component {
+interface IPropsModalOpener {
+    modalName: string,
+    label: string,
+    className?: string,
+    eventBus: EventBus,
+    events?: {
+        click: () => void,
+    },
+}
+
+export default class ModalOpener extends Component<IPropsModalOpener> {
     init() {
         this.props.events = {
             click: () => {

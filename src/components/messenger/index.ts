@@ -10,9 +10,18 @@ import ModalOpener from '../modal-opener';
 import Message from '../message';
 import menuIcon from '../../../static/icons/menu.svg';
 import clip from '../../../static/icons/clip.svg';
+import EventBus from '../../utils/EventBus';
 import { IMessagesData, IMessages } from '../../interfaces/IMessages';
 
-export default class Messenger extends Component {
+interface IPropsMessenger {
+    chatId?: string | null,
+    chatImg?: string | null,
+    chatName: string,
+    messages?: IMessages[],
+    eventBus: EventBus,
+}
+
+export default class Messenger extends Component<IPropsMessenger> {
     init() {
         this.children.avatar = new Avatar({
             name: this.props.chatName,

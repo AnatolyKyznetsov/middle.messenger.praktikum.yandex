@@ -1,8 +1,19 @@
 import template from './modal.hbs';
 import Component from '../../utils/Component';
 import Title from '../title-section';
+import EventBus from '../../utils/EventBus';
 
-export default class Modal extends Component {
+interface IPropsModal {
+    name: string,
+    title: string,
+    content: Component[],
+    eventBus: EventBus,
+    events?: {
+        click: (e: Event) => void,
+    },
+}
+
+export default class Modal extends Component<IPropsModal> {
     init() {
         if (this.props.eventBus) {
             this.props.eventBus.on(`open_modal:${this.props.name}`, () => {

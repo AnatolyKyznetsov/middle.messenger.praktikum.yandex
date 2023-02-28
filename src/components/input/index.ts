@@ -1,8 +1,27 @@
 import template from './input.hbs';
 import Component from '../../utils/Component';
 import inputValidator from '../../utils/inputValidator';
+import EventBus from '../../utils/EventBus';
 
-export default class Input extends Component {
+interface IPropsInput {
+    type?: string,
+    className?: string,
+    notEmpty?: boolean,
+    accept?: string,
+    value?: string,
+    name?: string,
+    placeholder?: string,
+    attrs?: string,
+    repeat?: string,
+    pattern?: string,
+    eventBus?: EventBus,
+    events?: {
+        focus: () => void,
+        blur: () => void,
+    }
+}
+
+export default class Input extends Component<IPropsInput> {
     init() {
         this.props.events = {
             focus: () => {

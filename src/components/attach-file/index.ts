@@ -2,7 +2,13 @@ import template from './attach-file.hbs';
 import Component from '../../utils/Component';
 import Input from '../input';
 
-export default class AttachFile extends Component {
+interface IPropsAttachFile {
+    text: string,
+    name: string,
+    accept?: string,
+}
+
+export default class AttachFile extends Component<IPropsAttachFile> {
     init() {
         this.children.input = new Input({
             type: 'file',

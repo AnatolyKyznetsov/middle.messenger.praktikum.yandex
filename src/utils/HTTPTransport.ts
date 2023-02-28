@@ -2,6 +2,8 @@ interface IOptions {
     [key: string]: any,
 }
 
+type HTTPMethod = (url: string, options?: IOptions, timeout?: number) => Promise<unknown>
+
 enum METHODS {
     GET = 'GET',
     PUT = 'PUT',
@@ -22,23 +24,23 @@ function queryStringify(data: IOptions = {}): string {
 }
 
 export default class HTTPTransport {
-    get(url: string, options: IOptions = {}) {
+    get: HTTPMethod = (url, options = {}) => {
         return this.request(url, { ...options, method: METHODS.GET }, options.timeout);
     }
 
-    post(url: string, options: IOptions = {}) {
+    post: HTTPMethod = (url, options = {}) => {
         return this.request(url, { ...options, method: METHODS.POST }, options.timeout);
     }
 
-    put(url: string, options: IOptions = {}) {
+    put: HTTPMethod = (url, options = {}) => {
         return this.request(url, { ...options, method: METHODS.PUT }, options.timeout);
     }
 
-    delete(url: string, options: IOptions = {}) {
+    delete: HTTPMethod = (url, options = {}) => {
         return this.request(url, { ...options, method: METHODS.DELETE }, options.timeout);
     }
 
-    request(url: string, options: IOptions, timeout = 5000) {
+    request: HTTPMethod = (url, options = {}, timeout = 5000) => {
         const { method, data, headers = {} } = options;
 
         return new Promise((resolve, reject) => {
