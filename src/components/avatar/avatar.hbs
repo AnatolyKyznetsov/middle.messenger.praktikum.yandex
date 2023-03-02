@@ -1,0 +1,14 @@
+<div class="avatar {{className}} {{#if big}}avatar_big{{/if}}">
+    {{#if load}} 
+        <label class="avatar__load">
+    {{/if}}
+        {{#if src}}
+            <img class="avatar__img" src="{{src}}" alt="{{#if showAlt}}Аватар.{{/if}}">
+        {{else}}
+            {{name}}
+        {{/if}}
+    {{#if load}}
+            {{{input}}}
+        </label>
+    {{/if}}
+</div>

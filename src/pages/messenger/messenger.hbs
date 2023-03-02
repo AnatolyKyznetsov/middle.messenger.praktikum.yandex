@@ -1,0 +1,27 @@
+<div>
+    <main class="main main_messenger">
+        <aside class="sidebar">
+            <div class="sidebar__head">
+                {{{profile}}}
+                <div class="search">
+                    {{{inputSearch}}}
+                </div>
+            </div>
+            <div class="chats">
+                <ul class="chats__list">
+                    {{#each chatItems}}
+                        {{{this}}}
+                    {{/each}}
+                </ul>
+                <button class="chats__add" title="Новый чат" type="button">
+                    {{{chatAddIcon}}}
+                </button>
+            </div>
+        </aside>
+        {{{messenger}}}
+    </main>
+    {{#each modals}}
+        {{{this}}}
+    {{/each}}
+    {{{testNav}}}
+</div>

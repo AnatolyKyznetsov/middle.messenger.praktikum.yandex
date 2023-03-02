@@ -2,4 +2,8 @@
     &__button {
         margin-left: auto;
     }
+
+    &__icon {
+        transform: scale(-1);
+    }
 }

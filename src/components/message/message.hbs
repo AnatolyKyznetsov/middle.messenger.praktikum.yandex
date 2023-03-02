@@ -1,0 +1,19 @@
+<div class="message {{#if from}}message_from{{/if}}">
+    {{#if from}}
+        <div class="message__head">
+            {{from}}
+        </div>
+    {{/if}}
+    <div class="message__content">
+        {{#each images}}
+            <img src={{this}} alt="">
+        {{/each}}
+        {{{message}}}
+    </div>
+    <div class="message__footer">
+        {{#unless from}}
+            <img class="message__indicator" src="{{indicator}}" alt="">
+        {{/unless}}
+        {{time}}
+    </div>
+</div>

@@ -7,17 +7,30 @@
 + обмен сообщениями
 
 ## На данный момент реализованно:
+
+#### Спринт 1
 + [Макет](https://www.figma.com/file/pbGFCt4LJYFiVVSkSvfPFk/messenger.praktikum?node-id=13%3A171&t=Q8wPAsf3I90JBCUM-1)
 + Шаблоны страниц с использованием handlebars
 + Публикация на [Netlify](https://celadon-zabaione-8d93f1.netlify.app/)
+
+#### Спринт 2
++ Внедрен typescript
++ Добавлена валидация на все формы
++ Данные из формы выводятся в консоль
++ Добавлен класс для работы с запросами
++ Добавлен ESLint:
++ Добавлен Stylelint:
 
 ## Структура проекта
 + Компонент шаблонов - */src/components*
 + Шаблоны страниц - */src/pages*
 + Стили - */src/styles*
++ Декларативные файлы TS */src/typings*
++ Утилиты */src/utils*
++ Поторяющиеся интерфейсы */src/interfaces*
 
 ## Стили
-Для написания стилей используется SCSS + БЭМ.  
+Для написания стилей используется SCSS + БЭМ.
 Стили для компонентов шаблонов хранятся в */src/styles/components*.
 
 ## Сборка проекта
@@ -36,4 +49,12 @@ npm run build
 Сборка и запуск сервера:
 ```
 npm run start
+```
+
+Запуск линтеров:
+```
+npm run lint
+```
+```
+npm run stylelint
 ```

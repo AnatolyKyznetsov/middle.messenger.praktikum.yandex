@@ -1,13 +1,9 @@
 .chats {
+    @include no-scroll-bar;
+
     height: 100%;
     overflow-y: auto;
     padding-bottom: 70px;
-
-    &:hover {
-        .chats__add {
-            opacity: 1;
-        }
-    }
 
     &__item {
         cursor: pointer;
@@ -97,5 +93,11 @@
         opacity: 0;
         transition: $transition;
         z-index: 1999;
+    }
+
+    &:hover {
+        .chats__add {
+            opacity: 1;
+        }
     }
 }

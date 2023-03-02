@@ -2,28 +2,27 @@
     "data": [
         {
             "name": "Имя",
-            "value": "Иван",
-            "input-name": "first_name"
+            "value": "Иван"
         },
         {
             "name": "Фамилия",
-            "value": "Иванов",
-            "input-name": "second_name"
+            "value": "Иванов"
+        },
+        {
+            "name": "Имя в чате",
+            "value": "Иван"
         },
         {
             "name": "Логин",
-            "value": "user123",
-            "input-name": "login"
+            "value": "user123"
         },
         {
             "name": "Почта",
-            "value": "example@gmail.com",
-            "input-name": "email"
+            "value": "example@gmail.com"
         },
         {
             "name": "Телефон",
-            "value": "+7 999 999 99 99",
-            "input-name": "phone"
+            "value": "+79999999999"
         }
     ]
 }

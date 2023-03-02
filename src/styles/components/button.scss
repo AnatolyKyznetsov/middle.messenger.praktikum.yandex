@@ -28,6 +28,11 @@
         box-shadow:inset 0 0 6px #{HexToRGBA($color-main-dark, 0.3)};
     }
 
+    &_icon {
+        height: auto;
+        width: auto;
+    }
+
     &_transparent {
         background: transparent;
         color: $color-elem-first;

@@ -1,0 +1,44 @@
+.message {
+    @extend .text;
+
+    max-width: 70%;
+    font-size: 13px;
+    display: inline-block;
+    padding: 8px;
+    background: $color-additional-first;
+    margin-left: auto;
+    border-radius: $radius-small;
+    border-bottom-right-radius: 0;
+    min-width: 120px;
+
+    &_from {
+        border-bottom-right-radius: $radius-small;
+        border-top-left-radius: 0;
+        background: $color-main-light;
+        margin-left: 0;
+    }
+
+    &__head {
+        font-weight: 500;
+        font-size: 12px;
+        margin-bottom: 8px;
+        color: $color-elem-first;
+    }
+
+    &__content {
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-top: 8px;
+        font-size: 12px;
+        justify-content: flex-end;
+        color: $color-text-middle;
+    }
+}

@@ -1,0 +1,23 @@
+<div>
+    <main class="main">
+        <div class="shape">
+            {{{buttonBack}}}
+            <div class="shape__wrapper">
+                <div class="profile">
+                    <div class="profile__inner">
+                        {{{avatar}}}
+                        {{#each links}}
+                            {{{this}}}
+                        {{/each}}
+                    </div>
+                    <ul class="profile__list">
+                        {{#each profileItems}}
+                            {{{this}}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    {{{testNav}}}
+</div>
