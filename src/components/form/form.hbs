@@ -1,6 +1,11 @@
-<form action="{{action}}" name="{{name}}" class="form {{className}}" method="{{#if method}}{{method}}{{else}}post{{/if}}">
+<form action="{{action}}" name="{{name}}" class="form {{#if isLoading}}loading{{/if}} {{className}}" method="{{#if method}}{{method}}{{else}}post{{/if}}">
     {{#each content}}
         {{{this}}}
     {{/each}}
     {{{submit}}}
+    {{#if status}}
+        <div class="form__message {{#if error}}form__message_error{{/if}} ">
+            {{status}}
+        </div>
+    {{/if}}
 </form>

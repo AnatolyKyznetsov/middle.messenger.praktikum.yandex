@@ -104,12 +104,11 @@ export default abstract class Component<Props extends Record<string, any> = any>
         });
     }
 
-    protected componentDidUpdate(oldProps: Props, newProps: Props): boolean {
-        return oldProps !== newProps;
-    }
+    protected componentDidUpdate(): void {}
 
     private _componentDidUpdate(oldProps: Props, newProps: Props) : void {
-        if (this.componentDidUpdate(oldProps, newProps)) {
+        if (oldProps !== newProps) {
+            this.componentDidUpdate();
             this._eventBus().emit(Component.EVENTS.FLOW_RENDER);
         }
     }
@@ -201,17 +200,5 @@ export default abstract class Component<Props extends Record<string, any> = any>
         });
 
         return temp.content;
-    }
-
-    public show() {
-        const element = this.getContent() as HTMLElement;
-
-        element!.style.display = '';
-    }
-
-    public hide() {
-        const element = this.getContent() as HTMLElement;
-
-        element!.style.display = 'none';
     }
 }

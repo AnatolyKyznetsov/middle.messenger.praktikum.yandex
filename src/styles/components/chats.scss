@@ -4,6 +4,7 @@
     height: 100%;
     overflow-y: auto;
     padding-bottom: 70px;
+    position: relative;
 
     &__item {
         cursor: pointer;
@@ -19,7 +20,7 @@
             background: $color-elem-second-active;
         }
 
-        &:hover {
+        &:hover:not(.chats__item_active) {
             background: $color-elem-second-hover;
         }
     }
@@ -39,7 +40,7 @@
         margin-bottom: 8px;
         text-overflow: ellipsis;
         overflow: hidden;
-        padding-right: 8px;
+        padding-right: 58px;
 
         &:only-child {
             margin-bottom: 0;

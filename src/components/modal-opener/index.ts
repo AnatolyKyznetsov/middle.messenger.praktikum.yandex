@@ -1,23 +1,25 @@
 import template from './modal-opener.hbs';
 import Component from '../../utils/Component';
-import EventBus from '../../utils/EventBus';
+import ModalController from '../../controllers/ModalController';
 
 interface IPropsModalOpener {
     modalName: string,
     label: string,
     className?: string,
-    eventBus: EventBus,
     events?: {
         click: () => void,
     },
+    callback?: () => void,
 }
 
 export default class ModalOpener extends Component<IPropsModalOpener> {
     init() {
         this.props.events = {
             click: () => {
-                if (this.props.eventBus) {
-                    this.props.eventBus.emit(`open_modal:${this.props.modalName}`);
+                ModalController.open(this.props.modalName);
+
+                if (this.props.callback) {
+                    this.props.callback()
                 }
             }
         };

@@ -1,12 +1,14 @@
-<li class="chats__item">
+<li class="chats__item {{#if isActive}}chats__item_active{{/if}}" data-id="{{id}}" data-owner="{{owner}}">
     {{{avatar}}}
     <div class="chats__content">
         <div class="chats__name">
             {{name}}
         </div>
-        <p class="chats__text">
-            {{{message}}}
-        </p>
+        {{#if message}}
+            <p class="chats__text">
+                {{{message.content}}}
+            </p>
+        {{/if}}
     </div>
     <span class="chats__date">
         {{lastDate}}

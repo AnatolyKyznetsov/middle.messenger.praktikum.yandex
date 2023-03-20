@@ -5,6 +5,9 @@ interface IPropsIcon {
     src: string,
     className?: string,
     alt?: string | null,
+    events?: {
+        click?: () => void
+    }
 }
 
 export default class Icon extends Component<IPropsIcon> {

@@ -16,6 +16,11 @@
 
     &__load {
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
 
         &::before {
             content: 'Поменять аватар';
@@ -53,6 +58,10 @@
     &__img {
         max-height: 100%;
         width: auto;
+
+        & + .avatar__letter {
+            display: none;
+        }
     }
 
     &__input {

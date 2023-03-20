@@ -1,7 +1,6 @@
 import template from './input.hbs';
 import Component from '../../utils/Component';
-import inputValidator from '../../utils/inputValidator';
-import EventBus from '../../utils/EventBus';
+import InputController from '../../controllers/InputController';
 
 interface IPropsInput {
     type?: string,
@@ -14,10 +13,11 @@ interface IPropsInput {
     attrs?: string,
     repeat?: string,
     pattern?: string,
-    eventBus?: EventBus,
+    identifier?: string,
     events?: {
-        focus: () => void,
-        blur: () => void,
+        focus?: () => void,
+        blur?: () => void,
+        input?: () => void,
     }
 }
 
@@ -25,22 +25,33 @@ export default class Input extends Component<IPropsInput> {
     init() {
         this.props.events = {
             focus: () => {
-                if (this.props.eventBus) {
-                    this.props.eventBus.emit('hideErrors');
-                }
+                InputController.hideError(this.props.identifier);
+            },
+            input: () => {
+                InputController.hideError(this.props.identifier);
             },
             blur: () => {
-                const input: HTMLInputElement = <HTMLInputElement>this.getContent();
-
-                inputValidator(this);
-
-                if (input.value) {
-                    input.classList.add('not-empty');
-                } else {
-                    input.classList.remove('not-empty');
-                }
+                InputController.validate(this);
             }
         };
+    }
+
+    clear() {
+        const input: HTMLInputElement = <HTMLInputElement>this.element;
+        input.value = '';
+        input.classList.remove('not-empty');
+    }
+
+    get value() {
+        const input: HTMLInputElement = <HTMLInputElement>this.element;
+
+        return input.value;
+    }
+
+    componentDidMount() {
+        if (!this.props.notEmpty) {
+            this.clear();
+        }
     }
 
     render() {

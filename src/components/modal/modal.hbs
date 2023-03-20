@@ -1,10 +1,15 @@
-<div class="modal" data-name="{{name}}">
+<div class="modal {{#if isActive}}modal_active{{/if}}" data-name="{{name}}">
     <div class="shape">
-        <div class="shape__wrapper">
+        <div class="shape__wrapper {{#if isLoading}}loading{{/if}}">
             {{{title}}}
             {{#each content}}
                 {{{this}}}
             {{/each}}
+            {{#if message}}
+                <div class="modal__message {{#if error}}modal__message_error{{/if}} ">
+                    {{message}}
+                </div>
+            {{/if}}
         </div>
     </div>
 </div>
