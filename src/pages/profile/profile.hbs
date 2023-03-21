@@ -1,23 +1,53 @@
-<div>
-    <main class="main">
-        <div class="shape">
-            {{{buttonBack}}}
-            <div class="shape__wrapper">
-                <div class="profile">
-                    <div class="profile__inner">
-                        {{{avatar}}}
-                        {{#each links}}
-                            {{{this}}}
-                        {{/each}}
-                    </div>
-                    <ul class="profile__list">
-                        {{#each profileItems}}
-                            {{{this}}}
-                        {{/each}}
-                    </ul>
+<main class="main">
+    <div class="shape">
+        {{{buttonBack}}}
+        <div class="shape__wrapper">
+            <div class="profile">
+                <div class="profile__inner">
+                    {{{avatar}}}
+                    {{#each links}}
+                        {{{this}}}
+                    {{/each}}
                 </div>
+                <ul class="profile__list">
+                    <li class="profile__item">
+                        <span class="profile__lettering">
+                            Имя
+                        </span>
+                        {{first_name}}
+                    </li>
+                    <li class="profile__item">
+                        <span class="profile__lettering">
+                            Фамилия
+                        </span>
+                        {{second_name}}
+                    </li>
+                    <li class="profile__item">
+                        <span class="profile__lettering">
+                            Имя в чате
+                        </span>
+                        {{display_name}}
+                    </li>
+                    <li class="profile__item">
+                        <span class="profile__lettering">
+                            Логин
+                        </span>
+                        {{login}}
+                    </li>
+                    <li class="profile__item">
+                        <span class="profile__lettering">
+                            Почта
+                        </span>
+                        {{email}}
+                    </li>
+                    <li class="profile__item">
+                        <span class="profile__lettering">
+                            Телефон
+                        </span>
+                        {{phone}}
+                    </li>
+                </ul>
             </div>
         </div>
-    </main>
-    {{{testNav}}}
-</div>
+    </div>
+</main>

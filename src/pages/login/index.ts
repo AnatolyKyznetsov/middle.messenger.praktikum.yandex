@@ -4,41 +4,26 @@ import TitleMain from '../../components/title-main';
 import Form from '../../components/form';
 import Label from '../../components/label';
 import Link from '../../components/link';
-import IInputData from '../../interfaces/IInputData';
-import inputs from '../../../static/data/inputs.json';
-import TestNav from '../../components/test-nav';
-
-const testNav = new TestNav();
-
-const inputsData: IInputData[] = inputs.data.filter(item =>
-    item.name === 'login' || item.name === 'password'
-);
+import AuthController from '../../controllers/AuthController';
+import ISigninData from '../../interfaces/ISigninData';
+import { Routes } from '../../utils/Router';
+import { INPUTS } from '../../config';
 
 const link = new Link({
-    page: 'registration',
+    page: Routes.SignUp,
     content: [ 'Eщё не зарегистрированы?' ],
     className: 'link shape__link'
 });
 
-const formLabels: Component[] = [];
-
-inputsData.forEach(item => {
-    const label = new Label({
-        text: item.text,
-        name: item.name,
-        type: item.type,
-        attrs: item.attrs,
-        repeat: item.repeat,
-        pattern: item.pattern,
-        tooltip: item.tooltip
-    });
-
-    formLabels.push(label);
-});
-
 const form = new Form({
     buttonLable: 'Войти',
-    content: formLabels
+    content: [
+        new Label(INPUTS.LOGIN),
+        new Label(INPUTS.PASSWORD),
+    ],
+    callback: (data: ISigninData) => {
+        AuthController.signin(data);
+    }
 });
 
 const title = new TitleMain({
@@ -46,12 +31,11 @@ const title = new TitleMain({
     text: 'Вход',
 });
 
-export default class Registration extends Component {
+export default class Login extends Component {
     init() {
         this.children.title = title;
         this.children.form = form;
         this.children.link = link;
-        this.children.testNav = testNav;
     }
 
     render() {

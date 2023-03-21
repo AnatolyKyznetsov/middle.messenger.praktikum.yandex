@@ -1,29 +1,24 @@
 import template from './modal.hbs';
 import Component from '../../utils/Component';
 import Title from '../title-section';
-import EventBus from '../../utils/EventBus';
+import ModalController from '../../controllers/ModalController';
+import withStore from '../../hocs/withStore';
+import IState from '../../interfaces/IState';
 
 interface IPropsModal {
+    isLoading?: boolean,
+    isActive?: boolean,
     name: string,
     title: string,
     content: Component[],
-    eventBus: EventBus,
     events?: {
         click: (e: Event) => void,
     },
 }
 
-export default class Modal extends Component<IPropsModal> {
+class Modal extends Component<IPropsModal> {
     init() {
-        if (this.props.eventBus) {
-            this.props.eventBus.on(`open_modal:${this.props.name}`, () => {
-                this.getContent()?.classList.add('modal_active');
-            });
-
-            this.props.eventBus.on(`close_modal:${this.props.name}`, () => {
-                this.getContent()?.classList.remove('modal_active');
-            });
-        }
+        ModalController.addEvents(this);
 
         this.children.title = new Title({
             className: 'shape__title',
@@ -35,7 +30,7 @@ export default class Modal extends Component<IPropsModal> {
                 const target = e.target as HTMLElement;
 
                 if (!target.closest('.shape')) {
-                    this.getContent()?.classList.remove('modal_active');
+                    ModalController.close(this.props.name);
                 }
             },
         };
@@ -45,3 +40,7 @@ export default class Modal extends Component<IPropsModal> {
         return this.compile(template, this.props);
     }
 }
+
+export default withStore((state: IState) => {
+    return state.modal || {};
+})(Modal as typeof Component);

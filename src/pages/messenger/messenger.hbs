@@ -8,11 +8,7 @@
                 </div>
             </div>
             <div class="chats">
-                <ul class="chats__list">
-                    {{#each chatItems}}
-                        {{{this}}}
-                    {{/each}}
-                </ul>
+                {{{chatList}}}
                 <button class="chats__add" title="Новый чат" type="button">
                     {{{chatAddIcon}}}
                 </button>
@@ -23,5 +19,4 @@
     {{#each modals}}
         {{{this}}}
     {{/each}}
-    {{{testNav}}}
 </div>

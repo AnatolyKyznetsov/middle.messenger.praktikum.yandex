@@ -10,21 +10,14 @@
             {{{headMenu}}}
         </div>
     {{/if}}
-     <div class="messenger__content js-messengerContent">
+     <div class="messenger__content">
         {{#unless chatId}}
             <span class="messenger__text messenger__text_center">
                 Выберите чат чтобы отправить сообщение
             </span>
         {{/unless}}
         {{#if chatId}}
-            {{#unless messages}}
-                <span class="messenger__text messenger__text_center">
-                    Сообщений пока нет
-                </span>
-            {{/unless}}
-            {{#each messageItems}}
-                {{{this}}}
-            {{/each}}
+            {{{messageList}}}
         {{/if}}
     </div>
     {{#if chatId}}

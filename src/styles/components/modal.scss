@@ -19,4 +19,15 @@
         gap: 20px;
         width: 100%;
     }
+
+    &__message {
+        text-align: center;
+        margin-top: 20px;
+        max-width: 337px;
+        color: $color-success;
+
+        &_error {
+            color: $color-warning;
+        }
+    }
 }

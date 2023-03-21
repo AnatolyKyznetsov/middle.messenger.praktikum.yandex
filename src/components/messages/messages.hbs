@@ -1,0 +1,10 @@
+<div class="messenger__inner">
+    {{#unless items}}
+        <span class="messenger__text messenger__text_center">
+            Сообщений пока нет
+        </span>
+    {{/unless}}
+    {{#each items}}
+        {{{this}}}
+    {{/each}}
+</div>

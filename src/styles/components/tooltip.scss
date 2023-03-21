@@ -5,7 +5,7 @@
         &::after {
             right: 16px;
         }
-    } 
+    }
 
     &_top {
         &::after {
@@ -17,7 +17,7 @@
         &::after {
             left: 16px;
         }
-    } 
+    }
 
     &_bottom {
         &::after {
@@ -53,7 +53,7 @@
         border: 1px solid $color-additional-third;
         color: $color-text-middle;
         border-radius: $radius-small;
-        width: 200px;
+        width: 280px;
         z-index: 1;
     }
 

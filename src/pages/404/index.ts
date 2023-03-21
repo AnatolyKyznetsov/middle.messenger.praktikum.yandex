@@ -3,12 +3,10 @@ import Component from '../../utils/Component';
 import TitleMain from '../../components/title-main';
 import Text from '../../components/text';
 import Link from '../../components/link';
-import TestNav from '../../components/test-nav';
-
-const testNav = new TestNav();
+import { Routes } from '../../utils/Router';
 
 const link = new Link({
-    page: 'messenger',
+    page: Routes.Messenger,
     content: [ 'Назад к чатам' ],
     className: 'link'
 });
@@ -28,7 +26,6 @@ export default class Page404 extends Component {
         this.children.title = title;
         this.children.text = text;
         this.children.link = link;
-        this.children.testNav = testNav;
     }
 
     render() {

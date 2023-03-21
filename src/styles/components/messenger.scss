@@ -47,6 +47,10 @@
         gap: 16px;
     }
 
+    &__inner {
+        @extend .messenger__content;
+    }
+
     &__text {
         width: 100%;
         text-align: center;

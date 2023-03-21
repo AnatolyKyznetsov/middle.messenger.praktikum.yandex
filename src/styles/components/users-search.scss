@@ -1,0 +1,40 @@
+.users-search {
+    width: 100%;
+    margin-top: 40px;
+    display: none;
+
+    &_active {
+        display: block;
+    }
+
+    &__list {
+        @include no-scroll-bar;
+
+        overflow-y: scroll;
+        max-height: 190px;
+    }
+
+    &__item {
+        color: $color-elem-first;
+        transition: $transition;
+        cursor: pointer;
+
+        &:not(:last-child) {
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid $color-elem-first;
+        }
+
+        &:hover {
+            color: $color-elem-first-hover
+        }
+    }
+
+    &__text {
+        display: block;
+
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
+}

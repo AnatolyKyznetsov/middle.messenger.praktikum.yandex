@@ -1,0 +1,10 @@
+<div class="users-search {{#if items}}users-search_active{{/if}}">
+    <h3 class="title title_block shape__title">
+        Выберите пользователя
+    </h3>
+    <ul class="users-search__list">
+        {{#each items}}
+            {{{this}}}
+        {{/each}}
+    </ul>
+</div>
