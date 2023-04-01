@@ -8,7 +8,7 @@ import InputController from '../../controllers/InputController';
 interface IPropsLabel {
     className?: string,
     error?: boolean,
-    text: string,
+    text?: string,
     type?: string,
     notEmpty?: boolean,
     value?: string,

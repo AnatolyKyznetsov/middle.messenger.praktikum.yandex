@@ -22,6 +22,7 @@ export enum Routes {
     Settings = '/settings',
     SettingsPassword = '/settings-password',
     Messenger = '/messenger',
+    ServerError = '/error',
     NotFound = '*'
 }
 

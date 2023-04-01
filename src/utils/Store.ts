@@ -19,7 +19,5 @@ class Store extends EventBus {
         return this.state;
     }
 }
-const store = new Store();
-// УБРАТЬ
-(window as any).store = store
-export default store;
+
+export default new Store();

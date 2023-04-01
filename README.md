@@ -39,6 +39,13 @@
 + выход из системы
 + изменение данных пользователя, аватара, пароля
 
+#### Спринт 4
++ Parcel заменён на Webpack
++ Реализованные тесты с использованием Mocha, Chai, Sinon
++ Настроен Docker
++ Настроен precommit с использованием Husky
++ Публикация на [Yandex Cloud](https://bbatjovd0tr76gigttb6.containers.yandexcloud.net/)
+
 ## Структура проекта
 + Компонент шаблонов - */src/components*
 + Шаблоны страниц - */src/pages*
@@ -55,7 +62,7 @@
 Стили для компонентов шаблонов хранятся в */src/styles/components*.
 
 ## Сборка проекта
-Для сборки используется Parcel.
+Для сборки используется ~~Parcel~~ Webpack.
 
 Запуск проекта для разработки:
 ```
@@ -74,8 +81,13 @@ npm run start
 
 Запуск линтеров:
 ```
-npm run lint
+npm run lint:main
 ```
 ```
-npm run stylelint
+npm run lint:style
+```
+
+Запуск тестов:
+```
+npm run test
 ```

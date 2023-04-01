@@ -1,5 +1,8 @@
+import './styles/style.scss';
+
 import Router, { Routes } from './utils/Router';
 import Page404 from './pages/404';
+import Page500 from './pages/500';
 import Login from './pages/login';
 import Messenger from './pages/messenger';
 import Profile from './pages/profile';
@@ -18,6 +21,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         .use(Routes.Settings, Settings)
         .use(Routes.SettingsPassword, SettingsPassword)
         .use(Routes.Messenger, Messenger)
+        .use(Routes.ServerError, Page500)
         .use(Routes.NotFound, Page404);
 
     switch (window.location.pathname) {
