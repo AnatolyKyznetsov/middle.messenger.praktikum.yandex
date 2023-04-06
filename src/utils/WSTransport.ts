@@ -46,7 +46,7 @@ export default class WSTransport extends EventBus {
     }
 
     setupPing() {
-        this.pingInterval = setInterval(() => {
+        this.pingInterval = window.setInterval(() => {
             this.send({ type: 'ping' });
         }, 10000)
 

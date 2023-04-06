@@ -71,7 +71,7 @@ class Messenger extends Component<IPropsMessenger> {
         this.children.sendMessageForm = sendMessageForm;
     }
 
-    protected componentDidUpdate(): void {
+    componentDidUpdate() {
         const data: IChats | undefined = this.props.data;
 
         if (data) {

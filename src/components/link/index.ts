@@ -12,7 +12,7 @@ interface IPropsLink extends IPropsWithRouter {
     },
 }
 
-class BaseLink extends Component<IPropsLink> {
+export class BaseLink extends Component<IPropsLink> {
     init() {
         if (this.props.page) {
             this.props.events = {
